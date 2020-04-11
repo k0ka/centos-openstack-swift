@@ -16,8 +16,12 @@ LABEL maintainer="admin@idwrx.com" \
 RUN groupadd -r -g $GROUP_ID swift && useradd -r -g swift -u $USER_ID swift
 
 
-RUN yum install -y centos-release-openstack-train
-RUN yum install -y openstack-swift-object openstack-swift-container openstack-swift-account openstack-swift-proxy rsync rsync-daemon
+RUN yum update -y && \
+	yum install -y centos-release-openstack-train && \
+	yum install -y --setopt=tsflags=nodocs openstack-swift-object openstack-swift-container \
+		openstack-swift-account openstack-swift-proxy rsync rsync-daemon && \
+	yum clean all
+
 
 COPY rsyncd.conf /etc/rsyncd.conf
 
