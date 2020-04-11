@@ -25,4 +25,4 @@ RUN yum update -y && \
 
 COPY rsyncd.conf /etc/rsyncd.conf
 
-CMD ['/bin/bash']
+CMD ["/bin/bash"]
