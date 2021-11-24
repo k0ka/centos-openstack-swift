@@ -1,4 +1,4 @@
-# Docker image for openstack swift based on CentOS 7
+# Docker image for Openstack Swift (release Train) based on CentOS 7
 
 ## Usage
 
@@ -8,7 +8,7 @@ You have to run 13 containers - one for each daemon
 $ docker run -d \
   --name swift-rsync \
   -v /swift/data:/mnt \
-  quay.io/idwrx/openstack-swift \
+  ghcr.io/k0ka/centos-openstack-swift \
   /usr/bin/rsync --daemon --no-detach -6
 ```
 
@@ -17,7 +17,7 @@ $ docker run -d \
   --name swift-rsync \
   -v /swift/config:/etc/swift \
   -v /swift/data:/mnt \
-  quay.io/idwrx/openstack-swift \
+  ghcr.io/k0ka/centos-openstack-swift \
   /usr/bin/swift-object-server /etc/swift/object-server.conf
 ```
 
@@ -26,7 +26,7 @@ $ docker run -d \
   --name swift-rsync \
   -v /swift/config:/etc/swift \
   -v /swift/data:/mnt \
-  quay.io/idwrx/openstack-swift \
+  ghcr.io/k0ka/centos-openstack-swift \
   /usr/bin/swift-object-auditor /etc/swift/object-server.conf
 ```
 
