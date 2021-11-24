@@ -19,7 +19,7 @@ RUN groupadd -r -g $GROUP_ID swift && useradd -r -g swift -u $USER_ID swift
 RUN yum update -y && \
 	yum install -y centos-release-openstack-train && \
 	yum install -y --setopt=tsflags=nodocs openstack-swift-object openstack-swift-container \
-		openstack-swift-account openstack-swift-proxy rsync rsync-daemon && \
+		openstack-swift-account openstack-swift-proxy rsync rsync-daemon python2-swiftclient && \
 	yum clean all
 
 
